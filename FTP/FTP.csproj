@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Kaven.Standard" Version="2.3.9" />
+    <PackageReference Include="Kaven.Standard" Version="2.3.10" />
   </ItemGroup>
 
 </Project>
