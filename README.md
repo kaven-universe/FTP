@@ -1,11 +1,12 @@
 # [FTP](https://github.com/kaven-universe/FTP)
 
-[kavenzero/ftp](https://hub.docker.com/r/kavenzero/ftp)
+A dedicated FTP server designed for NAT users.
 
 - Supports basic FTP commands (not fully supported)
 - Partial support for explicit/implicit encryption
 - Control connections support TLS encryption
 - Data connections support TLS encryption only in passive mode
+- `PasvServerAddress` supports setting IP or domain name. When set to domain name, it will automatically resolve to IP, which is very useful when using DDNS.
 
 demo configuration file:
 
@@ -54,3 +55,11 @@ demo configuration file:
   "LastModifiedAt": "2024-06-10T02:47:46.1686396Z"
 }
 ```
+
+## Docker
+
+[kavenzero/ftp](https://hub.docker.com/r/kavenzero/ftp)
+
+## Other
+
+[.NET tool](https://www.nuget.org/packages/KCmd/#ftp-server)
