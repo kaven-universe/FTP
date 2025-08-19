@@ -1,19 +1,28 @@
-# [FTP](https://github.com/kaven-universe/FTP)
+﻿# [FTP](https://github.com/kaven-universe/FTP)
 
-A dedicated FTP server designed for NAT users.
+## Dedicated FTP Server for NAT Environments  
 
-- Supports basic FTP commands (not fully supported)
-- Partial support for explicit/implicit encryption
-- Control connections support TLS encryption
-- Data connections support TLS encryption only in passive mode
-- `PasvServerAddress` supports setting IP or domain name. When set to domain name, it will automatically resolve to IP, which is very useful when using DDNS.
+This server is specifically designed for users operating behind NAT (Network Address Translation).  
 
-demo configuration file:
+**Key Features:**  
+
+- **FTP command support**: Implements essential FTP commands (not all commands are fully supported).  
+- **Encryption support**:  
+  - Partial support for explicit and implicit FTPS.  
+  - TLS encryption available for control connections.  
+  - TLS encryption for data connections is supported **only in passive mode**.  
+- **Passive mode configuration**:  
+  - `PasvServerAddress` can be set to either an IP address or a domain name.  
+  - When a domain name is used, it is automatically resolved to an IP address. This is especially useful when working with Dynamic DNS (DDNS).  
+- **Custom DNS resolution**:  
+  - Use the `DNS` setting to resolve `PasvServerAddress` through a custom DNS server.  
+
+## Demo configuration file
 
 ```json
 {
   "Port": 21,
-  "PasvServerAddress": "",
+  "PasvServerAddress": "my.ftp.com",
   "PasvPorts": "5555,5600-5655",
   "Users": [
     {
@@ -46,13 +55,14 @@ demo configuration file:
   ],
   "ImplicitTls": false,
   "EnableActiveMode": false,
+  "DNS": "8.8.8.8",
   "EnableTls": true,
   "CertificateFile": "certificate.crt",
   "PrivateKeyFile": "privateKey.key",
-  "ExecutingAssemblyVersion": "2.3.9.0",
-  "TypeAssemblyQualifiedName": "Kaven.Standard.Net.Ftp.Server.FtpServerConfig, Kaven.Standard, Version=2.3.9.0, Culture=neutral, PublicKeyToken=null",
+  "ExecutingAssemblyVersion": "2.5.4.0",
+  "TypeAssemblyQualifiedName": "Kaven.Standard.FtpServerConfig, Kaven.Standard, Version=2.5.4.0, Culture=neutral, PublicKeyToken=null",
   "CreatedAt": "2024-06-10T02:47:46.1686396Z",
-  "LastModifiedAt": "2024-06-10T02:47:46.1686396Z"
+  "LastModifiedAt": "2025-08-19T11:46:13.8211366Z"
 }
 ```
 
