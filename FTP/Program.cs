@@ -6,7 +6,10 @@ namespace FTP
     {
         private static void Main()
         {
-            Utility.StartConsoleApplication<AppFtpServer>();
+            Utility.StartConsoleApplication<AppFtpServer>(new()
+            {
+                IoC = new IoC(),
+            });
         }
     }
 }
