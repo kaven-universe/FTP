@@ -8,12 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="$(NuGetPackageRoot)kaven.standard\2.6.0\Independent\IoC.GetHostAddresses.cs" Link="IoC.GetHostAddresses.cs" />
+    <Compile Include="$(NuGetPackageRoot)kaven.standard\2.7.0\Independent\IoC.GetHostAddresses.cs" Link="IoC.GetHostAddresses.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DnsClient" Version="1.8.0" />
-    <PackageReference Include="Kaven.Standard" Version="2.6.0" />
+    <PackageReference Include="Kaven.Standard" Version="2.7.0" />
   </ItemGroup>
 
 </Project>
