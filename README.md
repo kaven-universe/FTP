@@ -58,11 +58,7 @@ This server is specifically designed for users operating behind NAT (Network Add
   "DNS": "8.8.8.8",
   "EnableTls": true,
   "CertificateFile": "certificate.crt",
-  "PrivateKeyFile": "privateKey.key",
-  "ExecutingAssemblyVersion": "2.5.4.0",
-  "TypeAssemblyQualifiedName": "Kaven.Standard.FtpServerConfig, Kaven.Standard, Version=2.5.4.0, Culture=neutral, PublicKeyToken=null",
-  "CreatedAt": "2024-06-10T02:47:46.1686396Z",
-  "LastModifiedAt": "2025-08-19T11:46:13.8211366Z"
+  "PrivateKeyFile": "privateKey.key"
 }
 ```
 
