@@ -12,6 +12,12 @@ FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /App
 COPY --from=build-env /App/out .
 
+# Labels for metadata
+LABEL name="ftp" \
+    author="Kaven" \
+    email="kaven@wuwenkai.com" \
+    description="A .NET 10 FTP server image for hosting FTP services with active/passive ports configured."
+
 # Expose the required ports
 EXPOSE 21
 
