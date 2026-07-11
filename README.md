@@ -1,23 +1,47 @@
 ﻿# [FTP](https://github.com/kaven-universe/FTP)
 
-## Dedicated FTP Server for NAT Environments  
+A dedicated FTP server built for NAT environments, with support for passive mode, FTPS, and custom DNS resolution.
 
-This server is specifically designed for users operating behind NAT (Network Address Translation).  
+## Key Features
 
-**Key Features:**  
+- FTP command support: Implements essential FTP commands (not all commands are fully supported).
+- Encryption support:
+  - Partial support for explicit and implicit FTPS.
+  - TLS encryption available for control connections.
+  - TLS encryption for data connections is supported only in passive mode.
+- Passive mode configuration:
+  - `PasvServerAddress` can be set to either an IP address or a domain name.
+  - When a domain name is used, it is automatically resolved to an IP address, which is useful for Dynamic DNS (DDNS).
+- Custom DNS resolution:
+  - Use the `DNS` setting to resolve `PasvServerAddress` through a custom DNS server.
 
-- **FTP command support**: Implements essential FTP commands (not all commands are fully supported).  
-- **Encryption support**:  
-  - Partial support for explicit and implicit FTPS.  
-  - TLS encryption available for control connections.  
-  - TLS encryption for data connections is supported **only in passive mode**.  
-- **Passive mode configuration**:  
-  - `PasvServerAddress` can be set to either an IP address or a domain name.  
-  - When a domain name is used, it is automatically resolved to an IP address. This is especially useful when working with Dynamic DNS (DDNS).  
-- **Custom DNS resolution**:  
-  - Use the `DNS` setting to resolve `PasvServerAddress` through a custom DNS server.  
+## Docker
 
-## Demo configuration file
+[kavenzero/ftp](https://hub.docker.com/r/kavenzero/ftp/tags)
+
+```sh
+# pull the image
+docker pull kavenzero/ftp
+
+# run the container and expose FTP ports
+# map host directories for configuration and files
+docker run -d --name ftp-server \
+  -p 21:21 \
+  -p 5555-5655:5555-5655 \
+  -v "$(pwd)/config:/App/Configuration" \
+  -v "$(pwd)/files:/App/Files" \
+  -v "$(pwd)/logs:/App/Log" \
+  kavenzero/ftp
+
+# verify the container is running
+docker ps --filter "name=ftp-server"
+```
+
+## Configuration
+
+> If the FTP configuration file is missing, the server will generate a default configuration file at startup.
+
+`/App/Configuration/FTP.kcf`
 
 ```json
 {
@@ -61,10 +85,6 @@ This server is specifically designed for users operating behind NAT (Network Add
   "PrivateKeyFile": "privateKey.key"
 }
 ```
-
-## Docker
-
-[kavenzero/ftp](https://hub.docker.com/r/kavenzero/ftp)
 
 ## Other
 
