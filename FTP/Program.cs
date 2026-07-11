@@ -1,15 +1,6 @@
 ﻿using Kaven.Standard;
 
-namespace FTP
+await Utility.StartConsoleApplication<AppFtpServer>(new()
 {
-    internal class Program
-    {
-        private static void Main()
-        {
-            Utility.StartConsoleApplication<AppFtpServer>(new()
-            {
-                IoC = new IoC(),
-            });
-        }
-    }
-}
+    IoC = new IoC(),
+});
