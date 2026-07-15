@@ -41,6 +41,8 @@ docker ps --filter "name=ftp-server"
 
 > If the FTP configuration file is missing, the server will generate a default configuration file at startup.
 
+> `AllowClearProtectionLevelOnDataConnection` controls whether a user is allowed to use a clear-data-connection mode when the control connection is protected by TLS. Set it to `false` for stricter FTPS behavior, which requires the client to use explicit encryption for the data connection, and to `true` only when compatibility with certain clients or legacy transfers requires it.
+
 `/App/Configuration/FTP.kcf`
 
 ```json
